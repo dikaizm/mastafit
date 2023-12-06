@@ -6,6 +6,22 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    /* Path aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@context/*": ["./src/context/*"],
+      "@types/*": ["./src/types/*"],
+      "@sass/*": ["./src/sass/*"],
+      "@Components/*": ["./src/views/Components/*"],
+      "@Layouts/*": ["./src/views/Layouts/*"],
+      "@Pages/*": ["./src/views/Pages/*"],
+    },
+
+    /* Global variables */
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
