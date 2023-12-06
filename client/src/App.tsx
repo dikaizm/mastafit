@@ -1,30 +1,31 @@
-import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import './App.css'
-import Home from '@views/Pages/Main/Home';
-import AuthLayout from '@views/Layouts/AuthLayout';
+import Home from '@Pages/Main/Home';
+import AuthLayout from '@Layouts/AuthLayout';
+import MainLayout from '@Layouts/MainLayout';
 
 function App() {
   return (
-    createBrowserRouter(
-      createRoutesFromElements(
+    <Router>
+      <Routes>
 
-        <Route path="/" element={<Home />}>
-
-          {/* <Route path="contact" element={<Contact />} />
-          <Route path="about" element={<About />} /> */}
-          
-          <Route element={<AuthLayout />}>
-            <Route
-              path="login"
-              // element={<Login />}
-              // loader={redirectIfUser}
-            />
-            <Route path="signup" />
-          </Route>
+        <Route element={<MainLayout />}>
+          <Route path='/' element={<Home />} />
+          {/* <Route path="contact" element={<Contact />} /> */}
+          {/* <Route path="about" element={<About />} /> */}
         </Route>
 
-      )
-    )
+        <Route element={<AuthLayout />}>
+          <Route
+            path="login"
+          // element={<Login />}
+          // loader={redirectIfUser}
+          />
+          <Route path="signup" />
+        </Route>
+
+      </Routes>
+    </Router>
   )
 }
 
